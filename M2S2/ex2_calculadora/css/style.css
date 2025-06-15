@@ -1,0 +1,120 @@
+/* Estilo geral da página */
+body {
+  background: linear-gradient(120deg, #e0eafc, #cfdef3);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Centraliza a calculadora */
+.calculadora {
+  background: #fff;
+  max-width: 340px;
+  margin: 60px auto;
+  padding: 28px 24px;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Display da calculadora */
+.display {
+  width: 100%;
+  background: #222;
+  color: #fff;
+  font-size: 2.2rem;
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 22px;
+  text-align: right;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+}
+
+/* Grid dos botões */
+.botoes {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* Botões */
+.btn {
+  padding: 20px 0;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #e3e3e3;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn.operacao {
+  background: #4f8cff;
+  color: #fff;
+}
+
+.btn.acao {
+  background: #ff5252;
+  color: #fff;
+}
+
+.btn.igual {
+  background: #00c853;
+  color: #fff;
+}
+
+.btn:hover {
+  background: #bdbdbd;
+  transform: scale(1.05);
+}
+.btn.operacao:hover {
+  background: #3a6bbf;
+}
+.btn.acao:hover {
+  background: #e53935;
+}
+.btn.igual:hover {
+  background: #00a152;
+}
+/* Botões específicos */
+.btn.zero {
+  grid-column: span 2;
+}
+.btn.ponto {
+  grid-column: span 1;
+}
+/* Botões de operação */
+.btn.operacao {
+  grid-column: span 1;
+}
+/* Botões de ação */
+.btn.acao {
+  grid-column: span 1;
+}
+/* Botão de igual */
+.btn.igual {
+  grid-column: span 2;
+}
+/* Responsividade */
+@media (max-width: 400px) {
+  .calculadora {
+    padding: 20px;
+  }
+  .display {
+    font-size: 1.8rem;
+    padding: 16px;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 16px 0;
+  }
+}
+
+
+
