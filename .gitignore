@@ -1,0 +1,20 @@
+# Ignora a pasta node_modules, se existir
+node_modules/
+
+# Ignora arquivos temporários
+*.log
+*.tmp
+
+# Ignora diretórios do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignora o diretório .vscode, se não quiser versionar
+.vscode/
+
+# Ignora todos os arquivos exceto os do projeto
+*.exe
+*.dll
+*.zip
+*.tar
+*.rar
