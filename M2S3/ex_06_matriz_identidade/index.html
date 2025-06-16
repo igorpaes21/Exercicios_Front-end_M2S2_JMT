@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matriz Identidade</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <header>
+          <h1>Gerador de Matriz Identidade</h1>
+          <p>
+            Digite a ordem da matriz para gerar a matriz identidade
+            correspondente.
+          </p>
+        </header>
+        <form id="matriz-form">
+          <div class="campo">
+            <label for="ordem">Ordem da Matriz:</label>
+            <input type="number" id="ordem" name="ordem" min="1" required />
+          </div>
+          <button type="submit">Gerar Matriz</button>
+        </form>
+        <output id="mensagem"></output>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
