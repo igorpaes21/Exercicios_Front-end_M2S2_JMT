@@ -1,3 +1,28 @@
+let celularEditando = null;
+
+// Obter parâmetros da URL
+function obterParametroURL(nome) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(nome);
+}
+
+// Carregar celular para edição
+function carregarCelularParaEdicao(id) {
+  const celulares = JSON.parse(localStorage.getItem('celulares')) || [];
+  const celular = celulares.find(c => c.id == id);
+  
+  if (celular) {
+    document.getElementById('modelo').value = celular.modelo;
+    document.getElementById('marca').value = celular.marca;
+    document.getElementById('cor').value = celular.cor;
+    document.getElementById('preco').value = celular.preco;
+    
+    celularEditando = celular;
+    document.querySelector('h1').textContent = 'Editar Celular';
+    verificarCampos();
+  }
+}
+
 // Verificar se todos os campos estão preenchidos
 function verificarCampos() {
   const modelo = document.getElementById('modelo').value.trim();
@@ -26,7 +51,19 @@ function limparFormulario() {
 // Salvar celular no localStorage
 function salvarCelular(celular) {
   let celulares = JSON.parse(localStorage.getItem('celulares')) || [];
-  celulares.push(celular);
+  
+  if (celularEditando) {
+    // Atualizar celular existente
+    const index = celulares.findIndex(c => c.id === celularEditando.id);
+    if (index !== -1) {
+      celulares[index] = { ...celular, id: celularEditando.id };
+    }
+  } else {
+    // Adicionar novo celular
+    celular.id = Date.now();
+    celulares.push(celular);
+  }
+  
   localStorage.setItem('celulares', JSON.stringify(celulares));
 }
 
@@ -44,20 +81,30 @@ document.getElementById('form-celular').addEventListener('submit', function(even
     modelo: document.getElementById('modelo').value.trim(),
     marca: document.getElementById('marca').value.trim(),
     cor: document.getElementById('cor').value.trim(),
-    preco: parseFloat(document.getElementById('preco').value),
-    id: Date.now() // ID único baseado no timestamp
+    preco: parseFloat(document.getElementById('preco').value)
   };
   
   salvarCelular(celular);
-  limparFormulario();
-  alert('Dados salvos com sucesso');
+  
+  if (celularEditando) {
+    alert('Celular atualizado com sucesso');
+    window.location.href = '../ex_05_cadastro_celulares_IV/index.html';
+  } else {
+    limparFormulario();
+    alert('Dados salvos com sucesso');
+  }
 });
 
 // Event listener para o botão voltar
 document.getElementById('btn-voltar').addEventListener('click', function() {
-  // Redirecionar para a página de listagem
-  window.location.href = '../ex_04_listagem_celulares/index.html';
+  window.location.href = '../ex_05_cadastro_celulares_IV/index.html';
 });
+
+// Verificar se há ID na URL para edição
+const idParaEdicao = obterParametroURL('id');
+if (idParaEdicao) {
+  carregarCelularParaEdicao(idParaEdicao);
+}
 
 // Verificar campos ao carregar a página
 verificarCampos();
