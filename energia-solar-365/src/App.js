@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
+import SobreNos from './components/SobreNos';
 
 function App() {
   return (
@@ -18,34 +19,12 @@ function App() {
 
       {/* Main Content */}
       <main className="main-content">
-        <div className="container">
-          {/* Sobre Nós Section */}
-          <section id="sobre-nos" className="sobre-nos">
-            <h2>Sobre Nós</h2>
-            <div className="content-section">
-              <img 
-                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&h=300&fit=crop" 
-                alt="Painéis Solares no Telhado" 
-                className="main-image"
-              />
-              <div className="text-content">
-                <p>
-                  Somos a Energia Solar 365, oferecemos um sistema sustentável, inteligente e que proporciona imensos benefícios, oferece uma solução inovadora para sua casa ou empresa.
-                </p>
-                
-                <h3>Dados de Mercado Segundo UEA 2023:</h3>
-                <ul>
-                  <li>Economia na conta de luz de <strong>95%</strong></li>
-                  <li>Payback médio: <strong>2 a 4 anos</strong></li>
-                  <li>Vida útil dos painéis: <strong>mais de 25 anos</strong></li>
-                  <li>Valorização do imóvel em até <strong>8%</strong> - segundo estudo do Lawrence Berkeley National Laboratory</li>
-                </ul>
-              </div>
-            </div>
-          </section>
+        {/* Sobre Nós Section - Componente */}
+        <SobreNos />
 
-          {/* Por que investir Section */}
-          <section id="por-que-investir" className="por-que-investir">
+        {/* Por que investir Section */}
+        <section id="por-que-investir" className="por-que-investir">
+          <div className="container">
             <h2>Por que Investir em Energia Solar?</h2>
             <div className="benefits-grid">
               <div className="benefit-card">
@@ -65,10 +44,12 @@ function App() {
                 <p>Payback em 2 a 4 anos e economia garantida por mais de 25 anos.</p>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Produtos Section */}
-          <section id="produtos" className="produtos">
+        {/* Produtos Section */}
+        <section id="produtos" className="produtos">
+          <div className="container">
             <h2>Nossos Produtos</h2>
             <div className="products-grid">
               <div className="product-card">
@@ -87,10 +68,12 @@ function App() {
                 <p>Transforme energia solar para energia elétrica para sua casa</p>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Contato Section */}
-          <section id="orcamento" className="contato">
+        {/* Contato Section */}
+        <section id="orcamento" className="contato">
+          <div className="container">
             <h2>Solicite seu Orçamento</h2>
             <form className="contact-form">
               <input type="text" placeholder="Seu nome" required />
@@ -98,8 +81,8 @@ function App() {
               <textarea placeholder="Descreva suas principais dúvidas, localização..." required></textarea>
               <button type="submit">Enviar</button>
             </form>
-          </section>
-        </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
