@@ -1,0 +1,123 @@
+.navbar {
+  background: #2d5016;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  position: relative;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: block;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito hover */
+.navbar-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  color: #a8d8a8;
+}
+
+.navbar-link:active {
+  transform: translateY(0);
+}
+
+/* Efeito de sublinhado animado */
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 8px;
+  left: 50%;
+  background: linear-gradient(90deg, #a8d8a8, #4a7c59);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.navbar-link:hover::after {
+  width: 80%;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset para compensar navbar fixa */
+#sobre-nos,
+#por-que-investir,
+#produtos,
+#orcamento {
+  scroll-margin-top: 80px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar-menu {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .navbar-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0;
+  }
+  
+  .navbar-link {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navbar-container {
+    padding: 0 15px;
+  }
+}
+
+/* Estados de foco para acessibilidade */
+.navbar-link:focus {
+  outline: 2px solid #a8d8a8;
+  outline-offset: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}

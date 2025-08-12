@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
@@ -12,23 +13,14 @@ function App() {
         </div>
       </header>
 
-      {/* Navigation */}
-      <nav className="navigation">
-        <div className="container">
-          <ul className="nav-menu">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#beneficios">Benefícios</a></li>
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-        </div>
-      </nav>
+      {/* Navigation - Componente Navbar */}
+      <Navbar />
 
       {/* Main Content */}
       <main className="main-content">
         <div className="container">
           {/* Sobre Nós Section */}
-          <section className="sobre-nos">
+          <section id="sobre-nos" className="sobre-nos">
             <h2>Sobre Nós</h2>
             <div className="content-section">
               <img 
@@ -53,7 +45,7 @@ function App() {
           </section>
 
           {/* Por que investir Section */}
-          <section className="por-que-investir">
+          <section id="por-que-investir" className="por-que-investir">
             <h2>Por que Investir em Energia Solar?</h2>
             <div className="benefits-grid">
               <div className="benefit-card">
@@ -76,7 +68,7 @@ function App() {
           </section>
 
           {/* Produtos Section */}
-          <section className="produtos">
+          <section id="produtos" className="produtos">
             <h2>Nossos Produtos</h2>
             <div className="products-grid">
               <div className="product-card">
@@ -98,7 +90,7 @@ function App() {
           </section>
 
           {/* Contato Section */}
-          <section className="contato">
+          <section id="orcamento" className="contato">
             <h2>Solicite seu Orçamento</h2>
             <form className="contact-form">
               <input type="text" placeholder="Seu nome" required />
