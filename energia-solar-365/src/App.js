@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import SobreNos from './components/SobreNos';
 import PorQueInvestir from './components/PorQueInvestir';
+import Produtos from './components/Produtos';
 
 function App() {
   return (
@@ -26,29 +27,8 @@ function App() {
         {/* Por que investir Section - Componente */}
         <PorQueInvestir />
 
-        {/* Produtos Section */}
-        <section id="produtos" className="produtos">
-          <div className="container">
-            <h2>Nossos Produtos</h2>
-            <div className="products-grid">
-              <div className="product-card">
-                <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=200&h=200&fit=crop" alt="Placa Solar" />
-                <h3>Placa Solar 550W</h3>
-                <p>Alta eficiência para uso residencial e comercial</p>
-              </div>
-              <div className="product-card">
-                <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?w=200&h=200&fit=crop" alt="Kit Solar" />
-                <h3>Kit Solar Completo</h3>
-                <p>Solução completa, incluindo inversores e estruturas de fixação</p>
-              </div>
-              <div className="product-card">
-                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=200&h=200&fit=crop" alt="Inversor Solar" />
-                <h3>Inversor Solar</h3>
-                <p>Transforme energia solar para energia elétrica para sua casa</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Produtos Section - Componente */}
+        <Produtos />
 
         {/* Contato Section */}
         <section id="orcamento" className="contato">
