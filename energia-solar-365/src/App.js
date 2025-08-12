@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import SobreNos from './components/SobreNos';
 import PorQueInvestir from './components/PorQueInvestir';
 import Produtos from './components/Produtos';
+import Orcamento from './components/Orcamento';
 
 function App() {
   return (
@@ -30,18 +31,8 @@ function App() {
         {/* Produtos Section - Componente */}
         <Produtos />
 
-        {/* Contato Section */}
-        <section id="orcamento" className="contato">
-          <div className="container">
-            <h2>Solicite seu Orçamento</h2>
-            <form className="contact-form">
-              <input type="text" placeholder="Seu nome" required />
-              <input type="email" placeholder="Seu e-mail" required />
-              <textarea placeholder="Descreva suas principais dúvidas, localização..." required></textarea>
-              <button type="submit">Enviar</button>
-            </form>
-          </div>
-        </section>
+        {/* Orçamento Section - Componente */}
+        <Orcamento />
       </main>
 
       {/* Footer */}
