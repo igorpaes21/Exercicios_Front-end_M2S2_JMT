@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import SobreNos from './components/SobreNos';
+import PorQueInvestir from './components/PorQueInvestir';
 
 function App() {
   return (
@@ -22,30 +23,8 @@ function App() {
         {/* Sobre Nós Section - Componente */}
         <SobreNos />
 
-        {/* Por que investir Section */}
-        <section id="por-que-investir" className="por-que-investir">
-          <div className="container">
-            <h2>Por que Investir em Energia Solar?</h2>
-            <div className="benefits-grid">
-              <div className="benefit-card">
-                <h3>Redução de Conta</h3>
-                <p>Economize até 95% da conta de energia elétrica.</p>
-              </div>
-              <div className="benefit-card">
-                <h3>Sustentabilidade</h3>
-                <p>Energia limpa e renovável, ajudando a preservar o meio ambiente.</p>
-              </div>
-              <div className="benefit-card">
-                <h3>Valorização do Imóvel</h3>
-                <p>Imóveis com placas solares aumentam o valor até 8% no mercado.</p>
-              </div>
-              <div className="benefit-card">
-                <h3>Retorno Garantido</h3>
-                <p>Payback em 2 a 4 anos e economia garantida por mais de 25 anos.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Por que investir Section - Componente */}
+        <PorQueInvestir />
 
         {/* Produtos Section */}
         <section id="produtos" className="produtos">
