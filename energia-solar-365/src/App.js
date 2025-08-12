@@ -5,6 +5,7 @@ import SobreNos from './components/SobreNos';
 import PorQueInvestir from './components/PorQueInvestir';
 import Produtos from './components/Produtos';
 import Orcamento from './components/Orcamento';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -35,12 +36,8 @@ function App() {
         <Orcamento />
       </main>
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <p>&copy; 2024 Energia Solar 365 - Todos os direitos reservados</p>
-        </div>
-      </footer>
+      {/* Footer - Componente */}
+      <Footer />
     </div>
   );
 }
